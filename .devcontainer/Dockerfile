@@ -1,9 +1,29 @@
 
 ARG VARIANT="ubuntu20.04" 
-ARG CUDA_VERSION="11.0.3"
+ARG CUDA_VERSION="11.6.2"
 FROM nvidia/cuda:${CUDA_VERSION}-devel-${VARIANT}
 
+# # set non interactive mode
+ARG DEBIAN_FRONTEND=noninteractive
 
-# [Optional] Uncomment this section to install additional OS packages.
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends <your-package-list-here>
+# # install dependencies to build python packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libcairo2-dev \
+    pkg-config \
+    python3-dev \
+    git \
+    curl \
+    bash-completion \
+    ssh
+
+# install poetry
+RUN curl -sSL https://install.python-poetry.org | python3 -
+
+ENV PATH="/root/.local/bin:$PATH"
+
+# add your own dependencies here!
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     [your-own-dependencies] \ 
+
+# set DEBIAN_FRONTEND back to dialog
+ARG DEBIAN_FRONTEND=dialog
