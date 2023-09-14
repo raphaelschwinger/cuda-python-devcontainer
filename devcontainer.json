@@ -5,8 +5,9 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"VARIANT": "ubuntu20.04",
-			"CUDA_VERSION": "11.6.2"
+			// choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
+			"VARIANT": "ubuntu22.04",
+			"CUDA_VERSION": "11.7.1"
 		}
 	},
 	"workspaceFolder": "/workspace",
