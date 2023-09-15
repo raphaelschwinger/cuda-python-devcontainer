@@ -9,7 +9,6 @@
 			"CUDA_VERSION": "11.6.2"
 		}
 	},
-	"workspaceFolder": "/workspace",
 	"runArgs": [
 		"--gpus",
 		"all"
