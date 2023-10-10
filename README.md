@@ -12,8 +12,9 @@ git submodule add git@github.com:raphaelschwinger/cuda-python-devcontainer.git .
 2. Set `CUDA_VERSION` and `VARIANT` in `.devcontainer/devcontainer.json` to your desired values. 
    The CUDA and Ubuntu version has to match with image tags found [here](https://hub.docker.com/r/nvidia/cuda).
 
+3. Reopen in container
 
-3. Init poetry project
+4. Init poetry project
 ```
 poetry init
 ```
