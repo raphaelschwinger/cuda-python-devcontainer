@@ -15,6 +15,10 @@
 		"all",
 		"--shm-size=32gb"
 	],
+	// mount data folder
+	"mounts": [
+		"source=/data-project/DeepBirdDetect/,target=/workspaces/bird-uncertainty-quantification/data,type=bind,consistency=cached",
+	],
 	"extensions": [
 		"ms-python.python",
 		"ms-python.vscode-pylance",
