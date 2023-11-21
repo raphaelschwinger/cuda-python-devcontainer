@@ -14,10 +14,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     curl \
     bash-completion \
-    ssh
+    ssh \
+    python3-pip \
+    python3.10-venv
 
-# install poetry
-RUN curl -sSL https://install.python-poetry.org | python3 -
+# # install poetry
+# RUN curl -sSL https://install.python-poetry.org | python3 -
 
 ENV PATH="/root/.local/bin:$PATH"
 
