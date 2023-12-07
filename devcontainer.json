@@ -15,9 +15,12 @@
 		"all",
 		"--shm-size=32gb"
 	],
+	// workspace folder
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+	"workspaceFolder": "/workspace",
 	// mount data folder
 	"mounts": [
-		"source=/data-project/DeepBirdDetect/,target=/workspaces/bird-uncertainty-quantification/data,type=bind,consistency=cached",
+		"source=/data-project/DeepBirdDetect/,target=/workspace/data,type=bind,consistency=cached",
 	],
 	"extensions": [
 		"ms-python.python",
