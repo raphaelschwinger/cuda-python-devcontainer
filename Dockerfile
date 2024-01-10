@@ -19,9 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tmux \
     htop
 
-RUN touch ~/.tmux.conf \
-    && echo "set -g mouse on" >> ~/.tmux.conf
-    && bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'copy-mode -e; send-keys -M'"
+COPY config/.tmux.conf /root/.tmux.conf
 
 # install poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
