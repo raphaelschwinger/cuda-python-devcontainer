@@ -20,7 +20,7 @@
 	"workspaceFolder": "/workspace",
 	// mount data folder
 	"mounts": [
-		"source=/data-project/DeepBirdDetect/,target=/workspace/data,type=bind,consistency=cached",
+		"source=/data-project/DeepBirdDetect/,target=/workspace/data,type=bind"
 	],
 	"extensions": [
 		"ms-python.python",
