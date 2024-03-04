@@ -34,12 +34,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     tmux \
     htop
 
-COPY config/.tmux.conf /root/.tmux.conf
+COPY config/.tmux.conf /home/$USERNAME/.tmux.conf
 
-# install poetry
+USER $USERNAME
+
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
-ENV PATH="/root/.local/bin:$PATH"
+ENV PATH="/home/$USERNAME/.local/bin:$PATH"
 
 # add your own dependencies here!
 # RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -48,4 +49,3 @@ ENV PATH="/root/.local/bin:$PATH"
 # set DEBIAN_FRONTEND back to dialog
 ARG DEBIAN_FRONTEND=dialog
 # [Optional] Set the default user. Omit if you want to keep the default as root.
-USER $USERNAME
