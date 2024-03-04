@@ -29,7 +29,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     curl \
     bash-completion \
-    ssh
+    ssh \
+    vim \
+    tmux \
+    htop
+
+COPY config/.tmux.conf /root/.tmux.conf
 
 # install poetry
 RUN curl -sSL https://install.python-poetry.org | python3 -
