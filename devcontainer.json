@@ -1,13 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/ubuntu
 {
-	"name": "COLA-dev",
+	"name": "GADME-dev",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
 			// choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
 			"VARIANT": "ubuntu22.04",
-			"CUDA_VERSION": "11.7.1"
+			"CUDA_VERSION": "12.3.1",
 		}
 	},
 	"runArgs": [
@@ -15,12 +15,20 @@
 		"all",
 		"--shm-size=32gb"
 	],
-	// workspace folder
+	"remoteUser": "vscode",
+	// set default terminal to bash
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash",
+			}
+		}
+	},
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
 	"workspaceFolder": "/workspace",
 	// mount data folder
 	"mounts": [
-		"source=/data-project/DeepBirdDetect/,target=/workspace/data,type=bind,consistency=cached",
+		"source=/data-project/GADME/,target=/workspace/data,type=bind,consistency=cached",
 	],
 	"extensions": [
 		"ms-python.python",
@@ -28,8 +36,4 @@
 		"github.copilot",
 		"ms-toolsai.jupyter"
 	],
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chown -R vscode:vscode /workspaces"
 }
