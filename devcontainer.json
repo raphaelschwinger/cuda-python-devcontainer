@@ -13,7 +13,10 @@
 	"runArgs": [
 		"--gpus",
 		"all",
-		"--shm-size=32gb"
+		"--shm-size=32gb",
+		"--memory=126GB",
+		"--memory-reservation=32GB",
+		"--cpus=32"
 	],
 	"remoteUser": "vscode",
 	// set default terminal to bash
@@ -28,7 +31,7 @@
 	"workspaceFolder": "/workspace",
 	// mount data folder
 	"mounts": [
-		"source=/data-project/GADME/,target=/workspace/data,type=bind,consistency=cached",
+		"source=/data-project/GADME/,target=/workspace/data_gadme,type=bind,consistency=cached",
 	],
 	"extensions": [
 		"ms-python.python",
