@@ -13,7 +13,10 @@
 	"runArgs": [
 		"--gpus",
 		"all",
-		"--shm-size=32gb"
+		"--shm-size=32gb",
+		"--memory=126GB",
+		"--memory-reservation=32GB",
+		"--cpus=32"
 	],
 	"remoteUser": "vscode",
 	// set default terminal to bash
