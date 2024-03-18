@@ -32,7 +32,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ssh \
     vim \
     tmux \
-    htop
+    htop \
+    ffmpeg
 
 COPY config/.tmux.conf /home/$USERNAME/.tmux.conf
 
