@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/ubuntu
 {
-	"name": "GADME-dev",
+	"name": "BirdSet-dev",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
@@ -31,7 +31,7 @@
 	"workspaceFolder": "/workspace",
 	// mount data folder
 	"mounts": [
-		"source=/data-project/GADME/,target=/workspace/data_gadme,type=bind,consistency=cached",
+		"source=/data-project/BirdSet/,target=/workspace/data_birdset,type=bind,consistency=cached",
 	],
 	"extensions": [
 		"ms-python.python",
