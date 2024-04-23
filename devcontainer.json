@@ -32,6 +32,7 @@
 	// mount data folder
 	"mounts": [
 		"source=/data-project/BirdSet/,target=/workspace/data_birdset,type=bind,consistency=cached",
+		"source=/data-project/DBD-logs/,target=/workspace/logs,type=bind,consistency=cached"
 	],
 	"extensions": [
 		"ms-python.python",
