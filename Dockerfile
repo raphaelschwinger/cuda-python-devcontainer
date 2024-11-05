@@ -1,6 +1,6 @@
 
 ARG VARIANT="ubuntu22.04" 
-ARG CUDA_VERSION="11.7.1"
+ARG CUDA_VERSION="12.4.1"
 FROM nvidia/cuda:${CUDA_VERSION}-devel-${VARIANT}
 
 # # set non interactive mode
