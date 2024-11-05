@@ -21,6 +21,10 @@
 		"github.copilot",
 		"ms-toolsai.jupyter"
 	],
+	"mounts": [
+		"source=/data-project/ho-d4rl/,target=/workspace/data,type=bind,consistency=cached",
+		"source=/home/rschwinger/ho-d4rl/logs,target=/workspace/logs,type=bind,consistency=cached",	
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
