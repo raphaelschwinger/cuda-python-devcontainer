@@ -2,6 +2,13 @@
 This repo configures a CUDA enabled python development container. 
 If you are unfamiliar with development containers, check out [this page](https://github.com/microsoft/vscode-dev-containers).
 
+
+## Folder mounts
+
+- `/workspace` is mounted to the root of the repository
+- `/workspace/data` is mounted to `/data-project/ho-d4rl` on the server
+- `/workspace/logs` is mounted to `/home/rschwinger/ho-d4rl/logs` to share logs between user
+
 ## Installation
 
 1. Add repo as submodule
