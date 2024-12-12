@@ -21,6 +21,8 @@
 		"github.copilot",
 		"ms-toolsai.jupyter"
 	],
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace",
 	"mounts": [
 		"source=/data-project/ho-d4rl/,target=/workspace/data,type=bind,consistency=cached",
 		"source=/home/rschwinger/ho-d4rl/logs,target=/workspace/logs,type=bind,consistency=cached",	

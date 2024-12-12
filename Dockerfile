@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     vim \
     tmux \
     htop \
-    ffmpeg \
+    ffmpeg 
 
 COPY config/.tmux.conf /root/.tmux.conf
 
