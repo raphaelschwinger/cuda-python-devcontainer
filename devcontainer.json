@@ -1,13 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/ubuntu
 {
-	"name": "COLA-dev",
+	"name": "pretrainwm-dev",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
 			// choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
 			"VARIANT": "ubuntu22.04",
-			"CUDA_VERSION": "11.7.1"
+			"CUDA_VERSION": "12.4.1"
 		}
 	},
 	"runArgs": [
