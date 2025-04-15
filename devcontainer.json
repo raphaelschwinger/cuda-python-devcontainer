@@ -25,4 +25,7 @@
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "sudo chown -R vscode:vscode /workspaces"
+	"mounts": [
+		"source=//datahome/rschwinger/pretrainwm,target=/workspaces/PretrainWM/data,type=bind,consistency=cached"
+	]
 }
