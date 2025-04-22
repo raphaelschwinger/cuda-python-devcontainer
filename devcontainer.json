@@ -14,8 +14,6 @@
 		"--gpus",
 		"all",
 		"--shm-size=32gb",
-		"--name",
-		"mkurz_devcontainer",
 		//"'device=2'",
 		"--cpus",
 		"8",
