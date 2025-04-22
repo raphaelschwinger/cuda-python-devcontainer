@@ -7,20 +7,25 @@
 		"args": {
 			// choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
 			"VARIANT": "ubuntu22.04",
-			"CUDA_VERSION": "12.3.1",
+			"CUDA_VERSION": "11.8.0",
 		}
 	},
 	"runArgs": [
 		"--gpus",
 		"all",
 		"--shm-size=32gb",
+		//"'device=2'",
+		"--cpus",
+		"8",
+		"--memory",
+		"32GB"
 	],
 	"remoteUser": "vscode",
 	// set default terminal to bash
 	"customizations": {
 		"vscode": {
 			"settings": {
-				"terminal.integrated.defaultProfile.linux": "bash",
+				"terminal.integrated.defaultProfile.linux": "zsh",
 			}
 		}
 	},
@@ -29,12 +34,14 @@
 	// mount data folder
 	"mounts": [
 		"source=/data-project/BirdSet/,target=/workspace/data_birdset,type=bind,consistency=cached",
-		"source=/home/rschwinger/DeepBirdDetect/Models,target=/workspace/models,type=bind,consistency=cached",	
+		"source=/home/rschwinger/DeepBirdDetect/Models,target=/workspace/models,type=bind,consistency=cached"
 	],
-	"extensions": [
+	"extensions": [ // Vscode extensions adjust as needed
 		"ms-python.python",
 		"ms-python.vscode-pylance",
 		"github.copilot",
-		"ms-toolsai.jupyter"
+		"ms-toolsai.jupyter",
+		"eamodio.gitlens",
+		"mutantdino.resourcemonitor"
 	],
 }
