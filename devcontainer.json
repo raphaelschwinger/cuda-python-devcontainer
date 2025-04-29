@@ -7,7 +7,7 @@
 		"args": {
 			// choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
 			"VARIANT": "ubuntu22.04",
-			"CUDA_VERSION": "11.8.0",
+			"CUDA_VERSION": "12.4.1",
 		}
 	},
 	"runArgs": [
