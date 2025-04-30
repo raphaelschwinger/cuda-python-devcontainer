@@ -34,7 +34,8 @@
 	// mount data folder
 	"mounts": [
 		"source=/data-project/BirdSet/,target=/workspace/data_birdset,type=bind,consistency=cached",
-		"source=/home/rschwinger/DeepBirdDetect/Models,target=/workspace/models,type=bind,consistency=cached"
+		"source=/home/rschwinger/DeepBirdDetect/Models,target=/workspace/models,type=bind,consistency=cached",
+		"source=//datahome/rschwinger/oekofor/,target=/workspace/oekofor,type=bind,consistency=cached",
 	],
 	"extensions": [ // Vscode extensions adjust as needed
 		"ms-python.python",
