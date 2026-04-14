@@ -1,31 +1,40 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/ubuntu
 {
-	"name": "COLA-dev",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			// choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
-			"VARIANT": "ubuntu22.04",
-			"CUDA_VERSION": "12.4.1",
-			"USER_UID": "${localEnv:UID}",
-			"USER_GID": "${localEnv:GID}"
-		}
-	},
-	"runArgs": [
-		"--gpus",
-		"all",
-		"--shm-size=32gb"
-	],
-	"extensions": [
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"github.copilot",
-		"ms-toolsai.jupyter"
-	],
-	"remoteUser": "vscode",
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chown -R vscode:vscode /workspaces"
+    "name": "COLA-dev",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            // choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
+            "VARIANT": "ubuntu22.04",
+            "CUDA_VERSION": "12.4.1",
+            "USERNAME": "vscode",
+            "USER_UID": "${localEnv:UID:1000}",
+            "USER_GID": "${localEnv:GID:1000}"
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "runArgs": [
+        "--gpus",
+        "all",
+        "--shm-size=32gb"
+    ],
+    "mounts": [
+        "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,readonly,type=bind"
+    ],
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "github.copilot",
+        "ms-toolsai.jupyter"
+    ],
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "remoteUser": "vscode"
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "sudo chown -R vscode:vscode /workspaces"
 }
