@@ -7,7 +7,9 @@
 		"args": {
 			// choose valid combination from https://hub.docker.com/r/nvidia/cuda/tags
 			"VARIANT": "ubuntu22.04",
-			"CUDA_VERSION": "12.4.1"
+			"CUDA_VERSION": "12.4.1",
+			"USER_UID": "${localEnv:UID}",
+			"USER_GID": "${localEnv:GID}"
 		}
 	},
 	"runArgs": [
@@ -21,6 +23,7 @@
 		"github.copilot",
 		"ms-toolsai.jupyter"
 	],
+	"remoteUser": "vscode",
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
