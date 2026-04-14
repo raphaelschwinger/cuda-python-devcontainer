@@ -14,17 +14,17 @@ git submodule add git@github.com:raphaelschwinger/cuda-python-devcontainer.git .
 
 3. Reopen in container
 
-4. Init poetry project
+4. Init [uv](https://docs.astral.sh/uv/) project
 ```
-poetry init
+uv init
 ```
 
 5. Start installing packages
 ```
-poetry add <package>
+uv add <package>
 ```
 
-6. Start virtualenv
+6. Run python in the virtualenv
 ```
-eval $(poetry env activate)
+uv run python
 ```
