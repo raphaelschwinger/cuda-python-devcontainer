@@ -18,7 +18,9 @@
     "runArgs": [
         "--gpus",
         "all",
-        "--shm-size=32gb"
+        "--shm-size=32gb",
+        "--name",
+        "${localEnv:USER}_${localWorkspaceFolderBasename}"
     ],
     "mounts": [
         "source=${env:HOME}/.ssh,target=/home/vscode/.ssh,readonly,type=bind"
